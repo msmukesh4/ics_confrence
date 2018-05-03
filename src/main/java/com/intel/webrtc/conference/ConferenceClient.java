@@ -346,8 +346,8 @@ public final class ConferenceClient implements SignalingChannelObserver, PeerCon
     }
 
     private void closeInternal() {
-        Iterator var1 = this.pcChannels.keySet().iterator();
-
+//        Iterator var1 = this.pcChannels.keySet().iterator();
+        Iterator var1 = Collections.list(this.pcChannels.keys()).iterator();
         while(var1.hasNext()) {
             String key = (String)var1.next();
             ((ConferencePeerConnectionChannel)this.pcChannels.get(key)).dispose();
